@@ -27,7 +27,7 @@ while true
 do
 	ipAddress=$(grep -Eo '([0-9]{1,3}\.){3}[0-9]{1,3}' "$file" | awk 'NR==1')
 	if [ -n "$ipAddress" ]; then 
-		echo "IP trouvée : $ipAddress"
+		echo "IP address found : $ipAddress"
 		read -p "IP address will be replace by: " motif
 		sed -i "s/$ipAddress/$motif/" "$file"
 		echo "IP address $ipAddress replaced by $motif"
